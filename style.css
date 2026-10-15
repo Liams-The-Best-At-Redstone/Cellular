@@ -1,3 +1,6 @@
 body {
-  background-color: #111;
+  display: grid;
+  place-items: center;
+  background-color: #000;
+  min-height: 100vh;
 }
