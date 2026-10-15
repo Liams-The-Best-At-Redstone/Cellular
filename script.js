@@ -98,10 +98,12 @@ function draw() {
     ctx.putImageData(imgData, 0, 0);
 }
 
+const lower = grid.length / 4;
+const upper = lower * 3;
 for (let i = 0; i < grid.length; i++) {
-    if (i < grid.length \ 4) {
+    if (i < lower) {
         grid[i] = Types.BLUE;
-    } else if (i > (grid.length / 4) * 3) {
+    } else if (i > (upper) * 3) {
         grid[i] = Types.RED;
     } else {
         grid[i] = Types.NONE;
