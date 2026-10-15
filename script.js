@@ -103,7 +103,7 @@ const upper = lower * 3;
 for (let i = 0; i < grid.length; i++) {
     if (i < lower) {
         grid[i] = Types.BLUE;
-    } else if (i > (upper) * 3) {
+    } else if (i > upper) {
         grid[i] = Types.RED;
     } else {
         grid[i] = Types.NONE;
