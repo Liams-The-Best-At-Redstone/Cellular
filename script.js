@@ -99,12 +99,10 @@ function draw() {
 }
 
 for (let i = 0; i < grid.length; i++) {
-    if (Math.random() > 0.6) {
-        if (Math.random() > 0.5) {
-            grid[i] = Types.RED;
-        } else {
-            grid[i] = Types.BLUE;
-        }
+    if (i < grid.length \ 4) {
+        grid[i] = Types.BLUE;
+    } else if (i > (grid.length / 4) * 3) {
+        grid[i] = Types.RED;
     } else {
         grid[i] = Types.NONE;
     }
