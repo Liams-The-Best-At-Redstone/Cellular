@@ -3,14 +3,14 @@ const canvas = document.getElementById('main-canvas');
 const ctx = canvas.getContext('2d');
 
 const cellSize = 2;
-const gridWidth = Math.floor(window.innerWidth / cellSize) - 100;
-const gridHeight = Math.floor(window.innerHeight / cellSize) - 100;
+const gridWidth = Math.floor(window.innerWidth / (cellSize + 0.1));
+const gridHeight = Math.floor(window.innerHeight / (cellSize + 0.1));
 
 canvas.width = gridWidth;
 canvas.height = gridHeight;
 
-canvas.style.width = `${gridWidth * cellSize}`;
-canvas.style.height = `${gridHeight * cellSize}`;
+canvas.style.width = `${gridWidth * cellSize}px`;
+canvas.style.height = `${gridHeight * cellSize}px`;
 
 const Types = Object.freeze({
     NONE: 0,
