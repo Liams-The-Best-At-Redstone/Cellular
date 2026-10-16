@@ -3,8 +3,8 @@ const canvas = document.getElementById('main-canvas');
 const ctx = canvas.getContext('2d');
 
 const cellSize = 1;
-const gridWidth = Math.floor(window.innerWidth / cellSize);
-const gridHeight = Math.floor(window.innerHeight / cellSize);
+const gridWidth = Math.floor(window.innerWidth / cellSize) - 100;
+const gridHeight = Math.floor(window.innerHeight / cellSize) - 100;
 
 canvas.width = gridWidth * cellSize;
 canvas.height = gridHeight * cellSize;
@@ -99,12 +99,12 @@ function draw() {
 }
 
 for (let i = 0; i < grid.length; i++) {
-    if (Math.random() > 0.6) {
-        if (Math.random() > 0.5) {
-            grid[i] = Types.RED;
-        } else {
-            grid[i] = Types.BLUE;
-        }
+    const x = i % gridWidth;
+    const y = Math.floor(i / gridWidth);
+    if (x < gridWidth / 2 && y < gridHeight / 2) {
+        grid[i] = Types.RED;
+    } else if (x > gridWidth / 2 && y > gridHeight / 2) {
+        grid[i] = Types.BLUE;
     } else {
         grid[i] = Types.NONE;
     }
