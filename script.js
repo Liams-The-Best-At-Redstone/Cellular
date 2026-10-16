@@ -2,12 +2,15 @@
 const canvas = document.getElementById('main-canvas');
 const ctx = canvas.getContext('2d');
 
-const cellSize = 1;
+const cellSize = 2;
 const gridWidth = Math.floor(window.innerWidth / cellSize) - 100;
 const gridHeight = Math.floor(window.innerHeight / cellSize) - 100;
 
-canvas.width = gridWidth * cellSize;
-canvas.height = gridHeight * cellSize;
+canvas.width = gridWidth;
+canvas.height = gridHeight;
+
+canvas.style.width = `${gridWidth * cellSize}`;
+canvas.style.height = `${gridHeight * cellSize}`;
 
 const Types = Object.freeze({
     NONE: 0,
